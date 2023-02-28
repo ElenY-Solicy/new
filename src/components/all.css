@@ -1,0 +1,29 @@
+.header {
+  height: 10%;
+  padding: 16px;
+  border-bottom: 1px solid #000;
+}
+.btn {
+  margin-right: 15px;
+}
+.main {
+  height: 70%;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 16px;
+  overflow-y: scroll;
+}
+.cards {
+  border: 1px solid #000;
+  height: 60px;
+  width: 60px;
+  padding: 16px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
