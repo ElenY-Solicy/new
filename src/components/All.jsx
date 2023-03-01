@@ -1,14 +1,14 @@
 import Main from "./Card";
-import "./all.css";
 import Footer from "./Footer";
+import "./all.css";
 
-function All() {
+const All = () => {
   return (
     <div className="wrapper">
       <Main />
       <Footer />
     </div>
   );
-}
+};
 
 export default All;

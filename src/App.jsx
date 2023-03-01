@@ -1,14 +1,14 @@
-import "./App.css";
 import All from "./components/All";
 import Instruction from "./components/Instruction";
+import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <All />
       <Instruction />
     </div>
   );
-}
+};
 
 export default App;

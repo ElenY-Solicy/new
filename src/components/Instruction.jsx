@@ -1,6 +1,5 @@
 import "./instruction.css";
-
-function Instruction() {
+const Instruction = () => {
   return (
     <div className="instruct">
       <h2>Instruction </h2>
@@ -14,6 +13,6 @@ function Instruction() {
       </ul>
     </div>
   );
-}
+};
 
 export default Instruction;

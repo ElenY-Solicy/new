@@ -1,11 +1,12 @@
+import { v4 as uuid } from "uuid";
 import { useState } from "react";
 import "./card.css";
-import { v4 as uuid } from "uuid";
 
-function Main() {
+const Main = () => {
   const [cardList, setCardList] = useState([]);
-  const randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
-  function addCard() {
+
+  const addCard = () => {
+    const randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
     setCardList((prevCardLIst) => [
       ...prevCardLIst,
       {
@@ -13,20 +14,19 @@ function Main() {
         list: randomNumber,
       },
     ]);
-  }
+  };
 
-  function sortCard() {
+  const sortCard = () => {
     setCardList(
       [].concat(cardList).sort((a, b) => {
         return a.list - b.list;
       })
     );
-  }
+  };
 
-  function deleteCards(e) {
-    setCardList(cardList.filter((el) => el.id !== e.target.id));
-    console.log(e.target.id);
-  }
+  const deleteCards = (id) => {
+    setCardList(cardList.filter((el) => el.id !== id));
+  };
 
   return (
     <>
@@ -42,7 +42,7 @@ function Main() {
         {cardList.map((number) => (
           <div className="cards" key={number.id}>
             {number.list}
-            <span className="close" id={number.id} onClick={deleteCards}>
+            <span className="close" onClick={() => deleteCards(number.id)}>
               &#10005;
             </span>
           </div>
@@ -50,6 +50,6 @@ function Main() {
       </div>
     </>
   );
-}
+};
 
 export default Main;
